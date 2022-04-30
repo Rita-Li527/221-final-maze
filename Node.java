@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Node {
     Cell cell;
     int dist;
@@ -13,5 +16,12 @@ public class Node {
 
     public int getY(){
         return cell.y;
+    }
+
+    public List<Integer> getCordinate(){
+        List<Integer> array = new ArrayList<>();
+        array.add(getX());
+        array.add(getY());
+        return array;
     }
 }

@@ -1,3 +1,4 @@
+import java.util.List;
 
 /** This class holds the Maze game */
 
@@ -5,12 +6,15 @@ public class Maze {
 
     public Node startNode;
     public Node endNode;
+    public List<Node> path;
 
     public Maze(int[][] rawMaze){
 
         Node[][] maze = createMaze(rawMaze);
 
         Lee leeAlgorithm = new Lee(maze, startNode, endNode);
+
+        path = leeAlgorithm.getPath();
 
 
     }
@@ -37,6 +41,26 @@ public class Maze {
             }
         }
         return maze;
+    }
+
+    public void printPath(){
+        for(Node grid : path){
+            System.out.println("Next");
+            System.out.println(grid.getX());
+            System.out.println(grid.getY());
+        }
+    }
+
+    public static void main(String[] args) {
+        int[][] rawMaze = {{2,1,1},
+                            {0,1,0},
+                            {0,0,3},
+                            {1,1,1}};
+
+        Maze maze = new Maze(rawMaze);
+
+        maze.printPath();
+
     }
     
 }
