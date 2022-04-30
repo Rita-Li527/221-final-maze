@@ -30,6 +30,10 @@ public class Lee {
 
         nodeMap = BFS();
 
+        if(nodeMap.equals(null)){
+            path = null;
+        }
+
         path = findpath(nodeMap);
         
 
@@ -64,13 +68,15 @@ public class Lee {
 
                 if(n.equals(endNode)){
                     queue.clear();
-                    break;
+                    return predecessor;   
                 }
             }
             
         }
 
-        return predecessor;
+        return null;
+
+        
 
     }
 

@@ -44,17 +44,30 @@ public class Maze {
     }
 
     public void printPath(){
-        for(Node grid : path){
-            System.out.println("Next");
-            System.out.println(grid.getCordinate());
+        if(path.equals(null)){
+            System.out.println("NO PATH OUT!");
+        }else{
+            for(Node grid : path){
+                System.out.println("Next");
+                System.out.println(grid.getCordinate());
+            }
         }
+        
     }
 
     public static void main(String[] args) {
-        int[][] rawMaze = {{2,1,1},
-                            {0,1,0},
-                            {0,0,3},
-                            {1,1,1}};
+        // int[][] rawMaze = {{2,1,1},
+        //                     {0,1,0},
+        //                     {0,0,3},
+        //                     {1,1,1}};
+
+        int[][] rawMaze = {
+            {1,2,0,1},
+            {0,0,1,3},
+            {1,0,1,0},
+            {1,0,0,0},
+            {1,1,1,0},
+        };
 
         Maze maze = new Maze(rawMaze);
 
