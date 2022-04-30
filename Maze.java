@@ -46,8 +46,7 @@ public class Maze {
     public void printPath(){
         for(Node grid : path){
             System.out.println("Next");
-            System.out.println(grid.getX());
-            System.out.println(grid.getY());
+            System.out.println(grid.getCordinate());
         }
     }
 
