@@ -1,7 +1,6 @@
-# 221-final-maze
-
 # Lee Algorithm Implementation
-## Rita Li and Sam Ding
+COMP 221 Algorithm Design and Analysis
+Rita Li and Sam Ding
 
 In this project, we implemented the Lee algorithm. Lee algorithm is based on Breadth-first Search (BFS) and provides one possible solution for the common maze routing problem.
 
