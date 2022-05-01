@@ -4,11 +4,11 @@ import java.util.List;
 
 public class Node {
     Cell cell;
-    int dist;
+    int status;
 
-    public Node(Cell cell, int dist) {
+    public Node(Cell cell, int status) {
         this.cell = cell;
-        this.dist = dist;
+        this.status = status;
     }
 
     public int getX(){

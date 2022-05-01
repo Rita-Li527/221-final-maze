@@ -30,13 +30,13 @@ public class Maze {
         for(int i = 0; i < rowNumber; i++){
             for(int j = 0; j < colNumber; j++){
                 Cell cell = new Cell(i,j);
-                int dist = rawMaze[i][j];
-                Node grid = new Node(cell, dist);
+                int status = rawMaze[i][j];
+                Node grid = new Node(cell, status);
                 maze[i][j] = grid;
 
-                if(dist == 2){
+                if(status == 2){
                     startNode = grid;
-                }else if(dist == 3){
+                }else if(status == 3){
                     endNode = grid;
                 }
             }

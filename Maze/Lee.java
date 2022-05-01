@@ -99,7 +99,7 @@ public class Lee {
             if(corX >= 0 & corX < rowNumber){
                 Node grid = maze[x+i][y];
                 if(!visited.contains(grid)){
-                    if(grid.dist!=1){
+                    if(grid.status!=1){
                         neighbors.add(grid);
                     }    
                 }
@@ -112,7 +112,7 @@ public class Lee {
             if(corY >= 0 & corY < colNumber){
                 Node grid = maze[x][y+j];
                 if(!visited.contains(grid)){
-                    if(grid.dist!=1){
+                    if(grid.status!=1){
                         neighbors.add(grid);
                     }
                 }
