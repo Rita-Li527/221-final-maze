@@ -48,16 +48,19 @@ public class Maze {
         if(path ==null){
             System.out.println("NO PATH OUT!");
         }else{
-            for(Node grid : path){
-                rawMaze[grid.getX()][grid.getY()] = 4;
+            for(int i =0; i< path.size()-2; i++){
+                rawMaze[path.get(i+1).getX()][path.get(i+1).getY()] = 4;
             }
-
+            System.out.println("Here is the shortest path: \n ■ = walls, □ = route, x = shortest path, o = start/finish");
             System.out.println("--------");
             for (int i = 0; i<rawMaze.length; i++) {
                 String strToPrint = "";
                 for (int j =0; j< rawMaze[0].length; j++) {
                     if (rawMaze[i][j] == 1) {
                         strToPrint += "■ ";
+                    }
+                    else if (rawMaze[i][j] == 2 | rawMaze[i][j] == 3) {
+                        strToPrint += "o ";
                     }
                     else if (rawMaze[i][j] == 4) {
                         strToPrint += "x ";
