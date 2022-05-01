@@ -44,15 +44,32 @@ public class Maze {
         return maze;
     }
 
-    public void printPath(){
-        if(path.equals(null)){
+    public void printPath(int[][] rawMaze){
+        if(path ==null){
             System.out.println("NO PATH OUT!");
         }else{
             for(Node grid : path){
-                System.out.println("Next");
-                System.out.println(grid.getCordinate());
+                rawMaze[grid.getX()][grid.getY()] = 4;
             }
+
+            System.out.println("--------");
+            for (int i = 0; i<rawMaze.length; i++) {
+                String strToPrint = "";
+                for (int j =0; j< rawMaze[0].length; j++) {
+                    if (rawMaze[i][j] == 1) {
+                        strToPrint += "■ ";
+                    }
+                    else if (rawMaze[i][j] == 4) {
+                        strToPrint += "x ";
+                    }
+                    else strToPrint += "□ ";
+                }
+    
+                System.out.println(strToPrint);
+            }
+            System.out.println("--------");
         }
+       
         
     }
 
@@ -63,16 +80,21 @@ public class Maze {
         //                     {1,1,1}};
 
         int[][] rawMaze = {
-            {1,2,0,1},
-            {0,0,1,3},
-            {1,0,1,0},
-            {1,0,0,0},
-            {1,1,1,0},
+            {1,2,0,1,0,1,1,1,1,1},
+            {0,0,1,0,0,1,1,1,1,1},
+            {1,0,1,0,0,0,1,1,1,0},
+            {1,0,0,0,1,0,1,1,1,0},
+            {1,0,1,1,1,1,1,1,1,0},
+            {1,0,0,0,0,1,0,1,1,1},
+            {0,0,1,0,1,0,0,1,1,3},
+            {1,0,1,0,0,0,1,0,0,1},
+            {1,0,0,0,1,0,1,0,1,0},
+            {1,1,1,1,1,0,0,0,1,0}
         };
 
         Maze maze = new Maze(rawMaze);
 
-        maze.printPath();
+        maze.printPath(rawMaze);
 
     }
     

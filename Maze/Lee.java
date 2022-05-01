@@ -31,11 +31,14 @@ public class Lee {
 
         nodeMap = BFS();
 
-        if(nodeMap.equals(null)){
+        if(nodeMap == null){
             path = null;
         }
+        else {
+            path = findpath(nodeMap);
+        }
 
-        path = findpath(nodeMap);
+        
         
 
     }
@@ -64,7 +67,7 @@ public class Lee {
 
                 visited.add(n);
 
-                System.out.println(n.getCordinate());
+                // System.out.println(n.getCordinate());
 
 
                 if(n.equals(endNode)){
