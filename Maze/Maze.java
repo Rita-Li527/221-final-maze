@@ -5,8 +5,13 @@ import java.util.List;
 
 public class Maze {
 
+    // Start Node
     public Node startNode;
+
+    // End Node
     public Node endNode;
+
+    // The path of the Maze 
     public List<Node> path;
 
     public Maze(int[][] rawMaze){

@@ -11,14 +11,25 @@ import java.util.Stack;
 
 public class Lee {
 
+    // the input Maze as an 2D-array of Nodes
     public Node[][] maze;
-    public List<Node> visited = new ArrayList<>();
-    public Node startNode;
-    public Node endNode;
-    public Map<Node, Node> nodeMap = new HashMap<>();
+
+    // The solution path of the Maze 
     public List<Node> path;
-    public int rowNumber;
-    public int colNumber;
+
+    // list of visited Nodes to keep track
+    List<Node> visited = new ArrayList<>();
+
+    // the map of each Node and its predecessor
+    Map<Node, Node> nodeMap = new HashMap<>();
+
+    // startNode and endNode
+    Node startNode;
+    Node endNode;
+
+    // Number of rows and columns of the Maze
+    int rowNumber;
+    int colNumber;
 
     public Lee(Node [][] maze, Node startNode, Node endNode){
         this.maze = maze;
@@ -28,21 +39,22 @@ public class Lee {
         rowNumber = maze.length;
         colNumber = maze[0].length;
 
-
         nodeMap = BFS();
 
+        // if endNode not reachable, set path = null.
         if(nodeMap == null){
             path = null;
         }
         else {
             path = findpath(nodeMap);
-        }
-
+        }       
         
-        
-
     }
 
+    /**
+     * This function is an implementation of the Breadth First Search(BFS) Algorithm.
+     * @return return the map of nodes and their predecessors if found the path, return null otherwise.
+     */
     public Map<Node, Node> BFS(){
         
         Map<Node, Node> predecessor = new HashMap<>();
@@ -52,40 +64,37 @@ public class Lee {
         visited.add(startNode);
         queue.add(startNode);
 
-
         while(queue.size()!=0){
 
             Node current = queue.poll();
 
-            
             for(Node n : findNeighbors(current)){
 
+                // put Node n and its parent to the parent map
+                predecessor.put(n,current); 
 
-                predecessor.put(n,current);
-
+                // add Node n into the queue of Nodes that are going to be check later
                 queue.add(n);
 
+                // Mark Node n as visited
                 visited.add(n);
 
-                // System.out.println(n.getCordinate());
-
-
+                // if found the endNode, end while loop and return the parent map
                 if(n.equals(endNode)){
                     queue.clear();
                     return predecessor;   
                 }
             }
-            
         }
-
         return null;
-
-        
-
     }
 
-    
-
+    /**
+     * This function takes an input Node and return the list of non-visited neighbors of that node. 
+     * For an Node with row index x and column index y, its neighbors are [x-1,y],[x+1,y],[x,y-1],[x,y+1]
+     * @param current
+     * @return
+     */
     public List<Node> findNeighbors(Node current){
         
         List<Node> neighbors = new ArrayList<>();
@@ -124,6 +133,11 @@ public class Lee {
 
     }
 
+    /**
+     * This function is an backtracking algorithm that will find the path based on the Map of predecessors.
+     * @param nodeMap
+     * @return
+     */
     public List<Node> findpath(Map<Node,Node> nodeMap){
         List<Node> path = new ArrayList<>();
         Stack<Node> stack = new Stack<>();
@@ -144,6 +158,10 @@ public class Lee {
         return path;
     }
 
+    /**
+     * This function return the solution path of the Maze.
+     * @return
+     */
     public List<Node> getPath(){
         return path;
     }
