@@ -8,6 +8,7 @@ In this project, we implemented the Lee algorithm. Lee algorithm is based on Bre
 ## Composition
 The package Maze contains four classes: Cell, Node, Lee, and Maze.
 
+![a sample 20*20 maze](img/sample%20matrix.png)
 
 ### Cell
 This class stores the x and y coordinates.
@@ -21,4 +22,5 @@ This class implements the Lee algorithm.
 ### Maze
 This class contains the main function that takes in a 20x20 matrix and computes the optimal/shortest path available from the start to the finish.
 
+![a sample 20*20 maze](img/sample%20solution.png)
 
