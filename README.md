@@ -29,7 +29,7 @@ How does a BFS algorithm work in a maze? Let's start with a simple maze:
 Assuming we want to get to the red block from the yellow block, we can simplify this maze into a tree like this:
 
 <img src="img/7x7graph.jpeg" width="350" />
-<img src="img/7x7graphWithG.png" width="350" />
+<img src="img/7x7mazeWithG.png" width="350" />
 
 Like the BFS algorithm, once we have converted the maze into a tree, the algorithm follows the route from the yellow block and visits every node (intersection) of the maze. Then, it will visit that node's children, the first child's children, and the second child's children etc. The Lee algorithm goes through all possible routes to find the route that leads to the desired goal (the red block). If, along the way, the algorithm reaches a dead end when visiting a child, it will return to its predecessor and start on an alternate route. 
 
