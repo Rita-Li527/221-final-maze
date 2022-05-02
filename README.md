@@ -28,7 +28,7 @@ How does a BFS algorithm work in a maze? Let's start with a simple maze:
 
 Assuming we want to get to the red block from the yellow block, we can simplify this maze into a tree like this:
 
-![7x7 maze graph representation](img/7x7graph.jpeg)
+<img src="img/7x7graph.jpeg" width="200" />
 
 ![7x7 graph with nodes](img/7x7mazeWithG.png)
 
