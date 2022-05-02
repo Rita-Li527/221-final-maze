@@ -31,11 +31,11 @@ Assuming we want to get to the red block from the yellow block, we can simplify 
 <img src="img/7x7graph.jpeg" width="350" />
 <img src="img/7x7mazeWithG.png" width="350" />
 
-Like the BFS algorithm, once we have converted the maze into a tree, the algorithm follows the route from the yellow block and visits every node (intersection) of the maze. Then, it will visit that node's children, the first child's children, and the second child's children etc. The Lee algorithm goes through all possible routes to find the route that leads to the desired goal (the red block). If, along the way, the algorithm reaches a dead end when visiting a child, it will return to its predecessor and start on an alternate route. 
+Like the BFS algorithm, once we have converted the maze into a tree, the algorithm follows the route from the yellow block and visits the first node of the maze (A). Then, it will visit that node's children (B), the first child's children (N/A), and the second child's children (C) etc. The Lee algorithm goes through all possible routes to find the route that leads to the desired goal (the red block, or F). If, along the way, the algorithm reaches a dead end when visiting a child (like B, D, or G), it will return to its predecessor and start on an alternate route. 
 
 
 
-![a sample 20x20 maze](img/sample%20matrix.png)
+<img src="img/sample%20matrix.png" width="450" />
 
-![a sample 20x20 maze](img/sample%20solution.png)
+<img src="img/sample%20solution.png" width="450" />
 
