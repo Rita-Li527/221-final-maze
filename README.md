@@ -20,6 +20,36 @@ This class implements the Lee algorithm.
 ### Maze
 This class contains the main function that takes in a 20x20 matrix and computes the optimal/shortest path available from the start to the finish.
 
+## Data Structure
+
+In this algorithm, we used a 2d array to represent the maze. Each item in the array represent each block on the maze and we use numbers to represent its current status. In a raw maze like this:
+
+{        int[][] rawMaze = {
+            {1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
+            {1,0,1,0,0,1,1,0,0,0,1,1,0,1,1,1,1,1,0,1},
+            {1,0,1,1,1,1,1,1,1,0,1,0,0,1,0,0,0,0,0,1},
+            {1,0,1,0,0,0,0,0,1,0,1,1,0,1,1,1,1,1,1,1},
+            {1,0,0,0,1,1,1,0,0,0,1,0,0,0,0,0,0,0,0,3},
+            {1,0,1,1,1,0,1,0,0,0,0,0,0,0,1,1,1,0,1,1},
+            {1,0,1,0,1,0,0,0,1,0,0,1,1,0,1,0,1,0,1,0},
+            {1,0,1,0,1,1,1,0,1,0,0,1,0,0,1,1,1,0,1,0},
+            {1,0,0,0,0,0,1,0,1,0,0,1,1,1,1,0,0,0,1,0},
+            {1,1,1,1,1,1,1,0,1,0,0,0,0,0,0,0,1,0,1,0},
+            {1,0,0,0,0,0,0,0,1,0,1,1,1,1,1,0,1,0,1,0},
+            {1,1,1,0,1,1,1,1,1,0,1,0,0,0,1,0,1,0,1,0},
+            {0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,1,0},
+            {0,1,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,0,1,0},
+            {0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,1,0,1,0},
+            {1,1,1,1,0,1,0,1,0,1,0,0,1,1,1,1,0,0,1,0},
+            {1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,1,0},
+            {1,0,1,1,1,1,0,1,1,1,1,1,1,1,0,1,1,1,1,1},
+            {1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,1},
+            {1,2,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1},
+        };
+
+}
+
+We used `0` to represent 
 
 ## How It Works
 How does a BFS algorithm work in a maze? Let's start with a simple maze:
@@ -36,7 +66,7 @@ where the maze would be labelled as:
 
 Like the BFS algorithm, once we have converted the maze into a tree, the algorithm follows the route from the yellow block and visits the first node of the maze (A). Then, it will visit that node's children (B & C), the first child's children (N/A), and the second child's children (C) etc. The Lee algorithm goes through all possible routes to find the route that leads to the desired goal (the red block, or F). If, along the way, the algorithm reaches a dead end when visiting a child (like B, D, or G), it will return to its predecessor and start on an alternate route. 
 
-
+Now that we know how the algorithm works, we can expand that onto a 20x20 maze to test its functionality. Say we 
 
 <img src="img/sample%20matrix.png" width="450" />
 
