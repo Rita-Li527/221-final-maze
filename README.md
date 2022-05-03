@@ -18,7 +18,7 @@ This class stores the Cell, which contains the x and y coordinates, and the stat
 This class implements the Lee algorithm. 
 
 ### Maze
-This class contains the main function that takes in a 20x20 matrix and computes the optimal/shortest path available from the start to the finish.
+This class contains the main function that takes in a 20x20 matrix and computes the optimal/shortest path available from the start to the finish. Use this java file to run the program.
 
 ## Data Structure
 
@@ -68,7 +68,7 @@ where the maze would be labelled as:
 
 <img src="img/7x7mazeWithG.png" width="350" />
 
-Like the BFS algorithm, once we have converted the maze into a tree, the algorithm follows the route from the yellow block and visits the first node of the maze (A). Then, it will visit that node's children (B & C), the first child's children (N/A), and the second child's children (C) etc. The Lee algorithm goes through all possible routes to find the route that leads to the desired goal (the red block, or F). The BFS algorithm (the method `BFS` under Lee.java) constructs a tree from the maze and then finds an optimal path using a backtracking algorithm (the method `findPath` under Lee.java). If, along the way, the algorithm reaches a dead end when visiting a child (like B, D, or G), it will return to its predecessor and start on an alternate route. If the maze does not have a path that connects the start point with the finishing point, the algorithm will return `NO PATHS!`.
+Like the BFS algorithm, once we have converted the maze into a tree, the algorithm follows the route from the yellow block and visits the first node of the maze (A). Then, it will visit that node's children (B & C), the first child's children (N/A), and the second child's children (C) etc. The Lee algorithm goes through all possible routes to find the route that leads to the desired goal (the red block, or F). The BFS algorithm (the method `BFS` under Lee.java) constructs a tree from the maze and then finds an optimal path using a backtracking algorithm (the method `findPath` under Lee.java). If, along the way, the algorithm reaches a dead end when visiting a child (like B, D, or G), it will return to its predecessor and start on an alternate route. If the maze does not have a path that connects the start point with the finishing point, the algorithm will return `NO PATH OUT!` and returns the original maze in a texual form, so that users can see why it doesn not lead to a way out.
 
 ## Implementation
 
