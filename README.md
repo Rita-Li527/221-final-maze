@@ -24,7 +24,8 @@ This class contains the main function that takes in a 20x20 matrix and computes 
 
 In this algorithm, we used a 2d array to represent the maze. Each item in the array represent each block on the maze and we use numbers to represent its current status. In a raw maze like this:
 
-{        int[][] rawMaze = {
+```
+        int[][] rawMaze = {
             {1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
             {1,0,1,0,0,1,1,0,0,0,1,1,0,1,1,1,1,1,0,1},
             {1,0,1,1,1,1,1,1,1,0,1,0,0,1,0,0,0,0,0,1},
@@ -46,10 +47,9 @@ In this algorithm, we used a 2d array to represent the maze. Each item in the ar
             {1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,1},
             {1,2,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1},
         };
+```
 
-}
-
-We used `0` to represent 
+We used `0` to represent available routes, `1` to represent walls, `2` to represent start point, and `3` to represent finish point.
 
 ## How It Works
 How does a BFS algorithm work in a maze? Let's start with a simple maze:
